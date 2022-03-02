@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><link type="text/css" rel="stylesheet" href="/style/body.css">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>饱了吗外卖</title>
+<script type="text/javascript" src="/js/display.js"></script>
+</head>
+<body>
+<div class="headerBar">
+    <span style="float: left; margin-top: 15px">
+    <a href="/user_account/homepage"><img style="border-radius: 20px" src="/images/logo.jpeg" alt="饱了吗" height="50" width="50"></a>
+    </span>
+    <span style="padding-left: 10px">饱了吗外卖 </span>
+    <div style="float: right">
+        <span >你好!&nbsp;&nbsp;</span>
+        <span id="username_span" th:text="${session.username}"></span>
+        <span ><a class="display_on_login" href="http://useroauth.takeawayapp.com/user_account/logout" style="display: none; color: lightpink">登出</a></span>
+        <span class="display_on_logout"><a style="color: lightpink" href="http://useroauth.takeawayapp.com/user_account/login" class="display_on_logout">登录</a></span>
+    </div>
+</div>
+<div>
+    <h1>欢迎来到饱了吗外卖!请先登录!!!</h1>
+</div>
+<div class="main_body_list">
+    <form method="post"  id="loginForm">
+        <div>
+            <label for="username">用户名: </label>
+            <input type ="text" name = "username" placeholder="目前只支持邮箱" id = "username" th:value="${username}"/>
+        </div>
+        <div>
+            <label for="password">密码: </label>
+            <input type ="text" name = "password" id = "password"/>
+        </div>
+        <div style="margin-top: 10px; text-align: center">
+            <input type = "submit" value = "登录">
+        </div>
+    </form>
+    <br>
+    <div>
+        <a href="http://useroauth.takeawayapp.com/user_account/register">还没有账户?点击注册</a>
+    </div>
+    <div>
+        <a href="/user_account/reset_password/step1">忘记密码?点击重置</a>
+    </div>
+</div>
+<div class="footer">
+    <p></i><a href="#">联系我们</a><i>|</i>客服热线：400-000-1234</p>
+    <p>Copyright &copy; 2022-2022 饱了吗版权所有 公安局XX分局备案编号：123456789</p>
+</div>
+</body>

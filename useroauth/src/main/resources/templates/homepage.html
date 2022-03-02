@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+    <link type="text/css" rel="stylesheet" href="/style/body.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>饱了么外卖导航</title>
+<script type="text/javascript" src="/js/display.js"></script>
+</head>
+<body>
+<div class="headerBar">
+    <span style="float: left; margin-top: 15px">
+    <a href="/user_account/homepage"><img style="border-radius: 20px" src="/images/logo.jpeg" alt="饱了吗" height="50" width="50"></a>
+    </span>
+    <span style="padding-left: 10px">饱了吗外卖 </span>
+    <div style="float: right">
+        <span >你好!&nbsp;&nbsp;</span>
+        <span id="username_span" th:text="${#httpServletRequest.getAttribute('username')}"></span>
+        <span ><a class="display_on_login" href="http://useroauth.takeawayapp.com/user_account/logout" style="display: none; color: lightpink">登出</a></span>
+        <span class="display_on_logout"><a style="color: lightpink" href="http://useroauth.takeawayapp.com/user_account/login" class="display_on_logout">登录</a></span>
+    </div>
+</div>
+<h1>饱了么外卖导航</h1>
+<div class="main_body_list">
+    <div>
+        <a href="http://useroauth.takeawayapp.com/user_account/register" class="display_on_logout">注册</a>
+    </div>
+    <div class="display_on_login">
+        <a href="http://user.takeawayapp.com/app-user/my_account">我的账户</a>
+    </div>
+    <div>
+        <a href="">点餐</a>
+    </div>
+    <div>
+        <a href="http://user.takeawayapp.com/app-user/sign_in">签到</a>
+    </div>
+    <div>
+        <a href="">抽奖</a>
+    </div>
+    <div class="display_on_login">
+        <span><a href="http://useroauth.takeawayapp.com/user_account/delete">注销账户</a></span>
+    </div>
+</div>
+
+<div class="footer">
+    <p></i><a href="#">联系我们</a><i>|</i>客服热线：400-000-1234</p>
+    <p>Copyright &copy; 2022-2022 饱了吗版权所有 公安局XX分局备案编号：123456789</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+    <link type="text/css" rel="stylesheet" href="/style/body.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script type="text/javascript" src="/js/display.js"></script>
+</head>
+<body>
+<div class="headerBar">
+    <span style="float: left; margin-top: 15px">
+    <a href="/user_account/homepage"><img style="border-radius: 20px" src="/images/logo.jpeg" alt="饱了吗" height="50"
+                                          width="50"></a>
+    </span>
+    <span style="padding-left: 10px">饱了吗外卖 </span>
+    <div style="float: right">
+        <span>你好!&nbsp;&nbsp;</span>
+        <span id="username_span" th:text="${session.username}"></span>
+        <span><a class="display_on_login" href="http://useroauth.takeawayapp.com/user_account/logout"
+                 style="display: none; color: lightpink">登出</a></span>
+        <span class="display_on_logout"><a style="color: lightpink" href="http://useroauth.takeawayapp.com/user_account/login"
+                                           class="display_on_logout">登录</a></span>
+    </div>
+</div>
+
+<div class="main_body_list">
+    <form method="post" id="loginForm">
+        <div><span>(账户名,密码合法性校验js暂时还没写,暂时请自己检查输入合法性哦)</span></div>
+        <div><span>账户名:&nbsp;</span><input type="text" name="username"
+                                                          placeholder="目前只支持邮箱"></div>
+
+        
+        <div><span>密码:&nbsp;</span><input type="text" name="password"></div>
+
+        
+        <div><span>验证码图片:&nbsp;</span><img src="/user_account/getCaptcha" id="valid-img" class="vail_img"
+                                     alt="验证码图片"></div>
+
+        
+        <div><span>验证码:&nbsp;</span><input type="text" name="captcha"></div>
+
+        <div><span>&nbsp;</span><input type="checkbox" id="t1"
+                                                   class="checked"><label for="t1" style="font-size: 15px">阅读并同意饱了吗注册条款(写着玩的放心点击:)
+        )</label></div>
+        <div style="text-align: center;">
+            <input type="submit" value="注册">
+        </div>
+    </form>
+</div>
+
+<div class="hr_25"></div>
+<div class="footer">
+    <p></i><a href="#">联系我们</a><i>|</i>客服热线：400-000-1234</p>
+    <p>Copyright &copy; 2022-2022 饱了吗版权所有 公安局XX分局备案编号：123456789</p>
+</div>
+</body>
+</html>

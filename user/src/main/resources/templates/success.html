@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head><link type="text/css" rel="stylesheet" href="/style/body.css"><link type="text/css" rel="stylesheet" href="/style/body.css">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>成功</title>
+<script type="text/javascript" src="/js/display.js"></script>
+    <script type="text/javascript">
+        var count = 10;
+        window.setInterval("redirect()",1000)
+        function redirect() {
+            if (count > 1) {
+                document.getElementById("time").innerText = --count;
+            } else {
+                location.href = "http://useroauth.takeawayapp.com/user_account/homepage";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="headerBar">
+    <span style="float: left; margin-top: 15px">
+    <a href="http://useroauth.takeawayapp.com/user_account/homepage"><img style="border-radius: 20px" src="/images/logo.jpeg" alt="饱了吗" height="50" width="50"></a>
+    </span>
+    <span style="padding-left: 10px">饱了吗外卖 </span>
+    <div style="float: right">
+        <span >你好!&nbsp;&nbsp;</span>
+        <span id="username_span" th:text="${session.username}"></span>
+        <span ><a class="display_on_login" href="http://useroauth.takeawayapp.com/user_account/logout" style="display: none; color: lightpink">登出</a></span>
+        <span class="display_on_logout"><a style="color: lightpink" href="http://useroauth.takeawayapp.com/user_account/login" class="display_on_logout">登录</a></span>
+    </div>
+</div>
+    <h1 th:text="${message}"></h1>
+    <div>
+        <img th:src="@{/images/success.jpeg}"/>
+    </div>
+    <div>
+        <span id="time">5</span><span>秒后返回首页</span>
+        <a href="http://useroauth.takeawayapp.com/user_account/homepage">点击返回</a>
+    </div>
+<div class="footer">
+    <p></i><a href="#">联系我们</a><i>|</i>客服热线：400-000-1234</p>
+    <p>Copyright &copy; 2022-2022 饱了吗版权所有 公安局XX分局备案编号：123456789</p>
+</div>
+</body>
+</html>
