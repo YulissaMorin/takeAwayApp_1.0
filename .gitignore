@@ -3,3 +3,5 @@
 **/test/
 **/application.yaml
 **/*.keystore
+README.md
+.gitignore
